@@ -1,4 +1,5 @@
-from flask import Flask, url_for
+from functools import wraps
+from flask import Flask, url_for, redirect, jsonify
 
 app = Flask(__name__)
 
@@ -23,3 +24,8 @@ def test_url_for():
     # 下面这个调用传入了多余的关键字参数，它们会被作为查询字符串附加到 URL 后面。
     print(url_for('test_url_for', num=2))  # 输出：/test?num=2
     return 'Test page'
+
+#@app.errorhandler(404)
+#def error_404(e):
+#    return '404 Error', 404
+
