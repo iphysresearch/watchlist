@@ -17,9 +17,9 @@ movies = [
 ]
 
 @app.route('/')
-@app.route('/index')
-@app.route('/home')
-def hello():
+#@app.route('/index')
+# @app.route('/home')
+def index():
 #    return '<h1>Hello Totoro!</h1><img src="http://helloflask.com/totoro.gif">'
     return render_template('index.html', name=name, movies = movies)
 
@@ -30,7 +30,7 @@ def user_page(name):
 @app.route('/test')
 def test_url_for():
     # 下面是一些调用示例：
-    print(url_for('hello'))  # 输出：/
+    # print(url_for('hello'))  # 输出：/
     # 注意下面两个调用是如何生成包含 URL 变量的 URL 的
     print(url_for('user_page', name='greyli'))  # 输出：/user/greyli
     print(url_for('user_page', name='peter'))  # 输出：/user/peter
